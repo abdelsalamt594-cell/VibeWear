@@ -149,10 +149,15 @@ DeleteAll.addEventListener("click", function () {
   cart.innerHTML = "";
   counter = 0;
   first.innerHTML = counter;
+  counter12 = 0;
+  total1.innerHTML = counter12;
+  updateTotal();
 });
 
 counter = 0;
 counter2 = 0;
+counter12 = 0;
+let total1 = document.getElementById("total-items");
 increase.addEventListener("click", function () {
   counter++;
   first.innerHTML = counter;
@@ -178,6 +183,7 @@ increase.addEventListener("click", function () {
         </div>
 
         <h2>150 EGP</h2>
+        <i class="fa-solid fa-trash delete-item"></i>
       </div>
     </div>
   `,
@@ -189,6 +195,8 @@ increase.addEventListener("click", function () {
   counter2++;
   num1.innerHTML = counter2;
   console.log(counter2);
+  counter12++;
+  total1.innerHTML = counter12;
   orderMessage += `• Urban Creator Tee - 150 EGP\n`;
   alert("Product added to cart successfully!");
 });
@@ -216,6 +224,7 @@ increase2.addEventListener("click", function () {
             </div>
             <h2>350 EGP</h
           </div>
+                      <i class="fa-solid fa-trash delete-item"></i>
         </div>
   `;
   }
@@ -224,6 +233,8 @@ increase2.addEventListener("click", function () {
   counter3++;
   num2.innerHTML = counter3;
   console.log(counter3);
+  counter12++;
+  total1.innerHTML = counter12;
   orderMessage += `• Core Cozy Hoodie - 350 EGP\n`;
   alert("Product added to cart successfully!");
   let min2 = document.getElementById("min2");
@@ -252,6 +263,7 @@ increase3.addEventListener("click", function () {
               <i id="pls3" class="fa-solid fa-circle-plus"></i>
             </div>
             <h2>90 EGP</h2>
+            <i class="fa-solid fa-trash delete-item"></i>
           </div>
         </div>
   `;
@@ -261,6 +273,8 @@ increase3.addEventListener("click", function () {
   counter4++;
   num3.innerHTML = counter4;
   console.log(counter4);
+  counter12++;
+  total1.innerHTML = counter12;
   orderMessage += `• Street Vibe Cap - 90 EGP\n`;
   alert("Product added to cart successfully!");
   let min3 = document.getElementById("min3");
@@ -289,7 +303,9 @@ increase4.addEventListener("click", function () {
               <i id="pls4" class="fa-solid fa-circle-plus"></i>
             </div>
             <h2>450 EGP</h
+
           </div>
+                      <i class="fa-solid fa-trash delete-item"></i>
         </div>
   `;
   }
@@ -299,6 +315,8 @@ increase4.addEventListener("click", function () {
   counter5++;
   num4.innerHTML = counter5;
   console.log(counter5);
+  counter12++;
+  total1.innerHTML = counter12;
   orderMessage += `• Wind-resistant Jacket - 450 EGP\n`;
   alert("Product added to cart successfully!");
 });
@@ -325,6 +343,7 @@ increase5.addEventListener("click", function () {
               <i id="pls5" class="fa-solid fa-circle-plus"></i>
             </div>
             <h2>300 EGP</h2>
+            <i class="fa-solid fa-trash delete-item"></i>
           </div>
         </div>
   `;
@@ -335,6 +354,8 @@ increase5.addEventListener("click", function () {
   counter6++;
   num5.innerHTML = counter6;
   console.log(counter6);
+  counter12++;
+  total1.innerHTML = counter12;
   orderMessage += `• Modern Cargo Joggers - 300 EGP\n`;
   alert("Product added to cart successfully!");
 });
@@ -362,7 +383,9 @@ increase6.addEventListener("click", function () {
               <i id="pls6" class="fa-solid fa-circle-plus"></i>
             </div>
             <h2>150 EGP</h2>
+            <i class="fa-solid fa-trash delete-item"></i>
           </div>
+          
         </div>
   `;
   }
@@ -372,6 +395,8 @@ increase6.addEventListener("click", function () {
   counter7++;
   num6.innerHTML = counter7;
   console.log(counter7);
+  counter12++;
+  total1.innerHTML = counter12;
   orderMessage += `• Retro Court Sneakers - 150 EGP\n`;
   alert("Product added to cart successfully!");
 });
@@ -382,6 +407,8 @@ cart.addEventListener("click", function (e) {
     first.innerHTML = counter;
     counter2++;
     document.getElementById("num1").innerHTML = counter2;
+    counter12++;
+    total1.innerHTML = counter12;
   }
 
   if (e.target.id == "min1") {
@@ -389,16 +416,19 @@ cart.addEventListener("click", function (e) {
       counter2--;
       counter--;
       first.innerHTML = counter;
+      counter12--;
+      total1.innerHTML = counter12;
       document.getElementById("num1").innerHTML = counter2;
-    } else if (counter2 == 1) {
-      e.target.closest(".countainer1").remove();
-
-      counter2 = 0;
-      counter--;
-
-      first.innerHTML = counter;
-      console.log(counter);
     }
+    // } else if (counter2 == 1) {
+    //   e.target.closest(".countainer1").remove();
+
+    //   counter2 = 0;
+    //   counter--;
+
+    //   first.innerHTML = counter;
+    //   console.log(counter);
+    // }
   }
 
   if (e.target.id == "pls2") {
@@ -406,6 +436,8 @@ cart.addEventListener("click", function (e) {
     first.innerHTML = counter;
     counter3++;
     document.getElementById("num2").innerHTML = counter3;
+    counter12++;
+    total1.innerHTML = counter12;
   }
 
   if (e.target.id == "min2") {
@@ -413,7 +445,17 @@ cart.addEventListener("click", function (e) {
       counter3--;
       counter--;
       first.innerHTML = counter;
+      counter12--;
+      total1.innerHTML = counter12;
       document.getElementById("num2").innerHTML = counter3;
+    } else if (counter3 == 1) {
+      e.target.closest(".countainer2").remove();
+
+      counter3 = 0;
+      counter--;
+
+      first.innerHTML = counter;
+      console.log(counter);
     }
   }
 
@@ -422,6 +464,8 @@ cart.addEventListener("click", function (e) {
     first.innerHTML = counter;
     counter4++;
     document.getElementById("num3").innerHTML = counter4;
+    counter12++;
+    total1.innerHTML = counter12;
   }
 
   if (e.target.id == "min3") {
@@ -429,7 +473,17 @@ cart.addEventListener("click", function (e) {
       counter4--;
       counter--;
       first.innerHTML = counter;
+      counter12--;
+      total1.innerHTML = counter12;
       document.getElementById("num3").innerHTML = counter4;
+    } else if (counter4 == 1) {
+      e.target.closest(".countainer3").remove();
+
+      counter4 = 0;
+      counter--;
+
+      first.innerHTML = counter;
+      console.log(counter);
     }
   }
 
@@ -438,6 +492,8 @@ cart.addEventListener("click", function (e) {
     first.innerHTML = counter;
     counter5++;
     document.getElementById("num4").innerHTML = counter5;
+    counter12++;
+    total1.innerHTML = counter12;
   }
 
   if (e.target.id == "min4") {
@@ -445,7 +501,17 @@ cart.addEventListener("click", function (e) {
       counter5--;
       counter--;
       first.innerHTML = counter;
+      counter12--;
+      total1.innerHTML = counter12;
       document.getElementById("num4").innerHTML = counter5;
+    } else if (counter5 == 1) {
+      e.target.closest(".countainer4").remove();
+
+      counter5 = 0;
+      counter--;
+
+      first.innerHTML = counter;
+      console.log(counter);
     }
   }
 
@@ -454,6 +520,8 @@ cart.addEventListener("click", function (e) {
     first.innerHTML = counter;
     counter6++;
     document.getElementById("num5").innerHTML = counter6;
+    counter12++;
+    total1.innerHTML = counter12;
   }
 
   if (e.target.id == "min5") {
@@ -461,7 +529,17 @@ cart.addEventListener("click", function (e) {
       counter6--;
       counter--;
       first.innerHTML = counter;
+      counter12--;
+      total1.innerHTML = counter12;
       document.getElementById("num5").innerHTML = counter6;
+    } else if (counter6 == 1) {
+      e.target.closest(".countainer5").remove();
+
+      counter6 = 0;
+      counter--;
+
+      first.innerHTML = counter;
+      console.log(counter);
     }
   }
 
@@ -470,6 +548,8 @@ cart.addEventListener("click", function (e) {
     first.innerHTML = counter;
     counter7++;
     document.getElementById("num6").innerHTML = counter7;
+    counter12++;
+    total1.innerHTML = counter12;
   }
 
   if (e.target.id == "min6") {
@@ -478,6 +558,16 @@ cart.addEventListener("click", function (e) {
       counter--;
       first.innerHTML = counter;
       document.getElementById("num6").innerHTML = counter7;
+      counter12--;
+      total1.innerHTML = counter12;
+    } else if (counter7 == 1) {
+      e.target.closest(".countainer6").remove();
+
+      counter7 = 0;
+      counter--;
+
+      first.innerHTML = counter;
+      console.log(counter);
     }
   }
 });
@@ -621,3 +711,51 @@ window.addEventListener("DOMContentLoaded", function () {
     Email.textContent = email;
   }
 });
+
+document.querySelector("#cart").addEventListener("click", function (e) {
+  const deleteBtn = e.target.closest(".delete-item");
+
+  if (deleteBtn) {
+    deleteBtn.closest(".countainer1").remove();
+    counter12--;
+    total1.innerHTML = counter12;
+    counter--;
+    first.innerHTML = counter;
+    updateTotal();
+  }
+});
+
+function updateTotal() {
+  let subtotal = 0;
+
+  const prices = {
+    num1: 150,
+    num2: 350,
+    num3: 90,
+    num4: 450,
+    num5: 300,
+    num6: 150,
+  };
+
+  document.querySelectorAll("#cart .countainer1").forEach((item) => {
+    const quantityElement = item.querySelector('[id^="num"]');
+    if (!quantityElement) return;
+
+    const quantity = Number(quantityElement.textContent);
+    subtotal += quantity * (prices[quantityElement.id] || 0);
+  });
+
+  const subtotalElement = document.getElementById("subtotal");
+  const totalElement = document.getElementById("total-amount");
+
+  if (!subtotalElement || !totalElement) {
+    console.error("تأكد من وجود subtotal و total-amount في HTML");
+    return;
+  }
+
+  const discountApplied = inp1.value.trim().toUpperCase() === "VIBE20";
+  const total = discountApplied ? subtotal * 0.8 : subtotal;
+
+  subtotalElement.textContent = subtotal + " EGP";
+  totalElement.textContent = total.toFixed(2) + " EGP";
+}

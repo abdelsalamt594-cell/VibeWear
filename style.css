@@ -674,6 +674,44 @@ input {
   margin-left: 300px;
 }
 
+.order-summary {
+  margin: 25px auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 420px;
+  box-sizing: border-box;
+  background: #f7f7fb;
+  border: 1px solid #e5e3fa;
+  border-radius: 18px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.order-summary h2 {
+  margin: 0 0 18px;
+  font-size: 23px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin: 14px 0;
+  color: #666;
+  font-size: 17px;
+}
+
+.total-row {
+  border-top: 1px solid #ddd;
+  padding-top: 16px;
+  color: #222;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+#total-amount {
+  color: #5145ed;
+}
+
 @media (max-width: 768px) {
   .start {
     flex-direction: column;
