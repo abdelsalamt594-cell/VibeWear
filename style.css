@@ -341,11 +341,49 @@ body p {
 }
 
 #cart {
-  display: none;
+  display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: center;
-  gap: 100px;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.cart .countainer1 {
+  height: auto;
+  padding: 15px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cart .countainer1 img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.cart .countainer1 .price {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cart .countainer1 .min1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart .countainer1 .min1 i,
+.cart .countainer1 .delete-item {
+  cursor: pointer;
+  color: #4f46e5;
+}
+
+.cart .countainer1 h2 {
+  overflow-wrap: anywhere;
 }
 
 .cart {
